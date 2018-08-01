@@ -1,14 +1,15 @@
-	/**
-	 *	Function for replacing quotes which can break the code
-	 *
-	 *	Character like single quote, double quote will be replace with ASCII code for HTML
-	 */
-  function EscapeQuote($txt) { 
-      if(is_array($txt)){return array_map(__METHOD__, $txt);}
+/**
+ *	Function for replacing quotes which can break the code
+ *
+ *	Character like single quote, double quote will be replace with ASCII code for HTML
+ */
 
-      if(!empty($txt) && is_string($txt)) { 
-        return str_replace(array("'", '"'), array('&#39;', '&#34;'), $txt); 
-      } 
+function EscapeQuote($txt) { 
+	if(is_array($txt)){return array_map(__METHOD__, $txt);}
 
-      return $txt; 
-  }
+	if(!empty($txt) && is_string($txt)) { 
+		return str_replace(array("'", '"'), array('&#39;', '&#34;'), $txt); 
+	} 
+
+	return $txt; 
+}
